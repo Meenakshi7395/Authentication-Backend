@@ -6,9 +6,13 @@ const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   mobile : {type: String , required:true},
-  dob:{type:Date, required:true}
+  dob:{type:Date, timestamps:true}
 
-});
+},
+{
+  timestamps: true // Automatically
+}
+);
 
 const User = mongoose.model('User', userSchema);
 
